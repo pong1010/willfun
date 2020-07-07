@@ -740,7 +740,7 @@ rotate
 
 	<script
 		src="//cdnjs.cloudflare.com/ajax/libs/accounting.js/0.4.1/accounting.min.js"></script>
-	<script src="//image-se.ycrowdy.com/crowdyJs/vue-numeric.min.js"></script>
+	<script src="/resources/willfun/js/vue-numeric.min.js"></script>
 
 
 	<script
