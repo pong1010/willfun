@@ -904,11 +904,13 @@ rotate(
 				<!---->
 				<!---->
 				<form name="form_chk" method="post">
-					<input type="hidden" name="m" value="checkplusSerivce"> <input
-						type="hidden" name="EncodeData" id="encodeData" value="">
+					<input type="hidden" name="m" value="checkplusSerivce"> 
+					<input type="hidden" name="EncodeData" id="encodeData" value="">
 					<input type="hidden" name="param_r1"
-						value="accountSetting.authResult"> <input type="hidden"
-						name="param_r2" value=""> <input type="hidden"
+						value="accountSetting.authResult"> 
+					<input type="hidden"
+						name="param_r2" value=""> 
+					<input type="hidden"
 						name="param_r3" value="">
 				</form>
 			</div>
