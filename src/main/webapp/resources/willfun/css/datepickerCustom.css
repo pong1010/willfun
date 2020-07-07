@@ -1,0 +1,25 @@
+.datetimepickerGray { background-image:url(../img/loop_dot_11_black.png); }
+.ll-skin-gray { font-size:14px; }
+.ll-skin-gray .ui-widget { background-color:#eaeaea; border:none; border-radius:0; -webkit-border-radius:0; -moz-border-radius:0; }
+.ll-skin-gray .ui-datepicker { padding:0; }
+.ll-skin-gray .ui-datepicker-header { border:none; background:transparent; font-weight:normal; font-size:15px; }
+.ll-skin-gray .ui-datepicker-header .ui-state-hover { background:transparent; border-color:transparent; cursor:pointer; border-radius:0; -webkit-border-radius:0; -moz-border-radius:0; }
+.ll-skin-gray .ui-datepicker .ui-datepicker-title { color:#161616; }
+.ll-skin-gray .ui-datepicker .ui-datepicker-prev-hover,
+.ll-skin-gray .ui-datepicker .ui-datepicker-next-hover,
+.ll-skin-gray .ui-datepicker .ui-datepicker-next,
+.ll-skin-gray .ui-datepicker .ui-datepicker-prev { cursor:pointer; top:.55em; border:none; }
+.ll-skin-gray .ui-datepicker .ui-datepicker-prev-hover { left:2px; }
+.ll-skin-gray .ui-datepicker .ui-datepicker-next-hover { right:2px; }
+.ll-skin-gray .ui-datepicker .ui-datepicker-next span,
+.ll-skin-gray .ui-datepicker .ui-datepicker-prev span { background-image:url(../img/ui-icons_454545_256x240.png); background-position:-32px 0; margin-top:0; top:0; font-weight:normal; }
+.ll-skin-gray .ui-datepicker .ui-datepicker-prev span { background-position:-96px 0; }
+.ll-skin-gray .ui-datepicker table { margin:0; }
+.ll-skin-gray .ui-datepicker th { color:#161616; font-size:13px; font-weight:normal; border:none; }
+.ll-skin-gray .ui-datepicker td { background:#eaeaea; border:none; padding:0; }
+.ll-skin-gray td .ui-state-default { background:transparent; border:1px solid #eaeaea; text-align:center; margin:0; font-weight:normal; color:#161616; font-size:14px; }
+.ll-skin-gray .ui-state-disabled { opacity:1; }
+.ll-skin-gray .ui-state-disabled .ui-state-default { color:#bfbfbf; }
+.ll-skin-gray td .ui-state-highlight { color:#009933; }
+.ll-skin-gray td .ui-state-active { color:#0f6fff !important; background-color:transparent !important; border:1px solid #0f6fff; border-radius:30px; -webkit-border-radius:30px; -moz-border-radius:30px; }
+.ll-skin-gray td .ui-state-hover { color:#fff !important; background-color:#0f6fff !important; border-radius:30px; -webkit-border-radius:30px; -moz-border-radius:30px; }
