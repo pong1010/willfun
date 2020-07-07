@@ -60,6 +60,13 @@ public class CommonController {
 		  
 		  return "mkproject/CrowdyFundingMain"; }
 	
+	//프로젝트 입력페이지
+	@GetMapping("/writeproject")
+	 String CrowdyFundingWirte() {
+		
+		return "mkproject/reward/rewardFunding1";
+	}
+		
 	
 	//회원가입창
 	@GetMapping("/join")

@@ -1,9 +1,7 @@
 <%@ page contentType="text/html; charset=UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%
-	request.setCharacterEncoding("UTF-8");
-String cp = request.getContextPath();
-%>
+<%	request.setCharacterEncoding("UTF-8");%>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -588,6 +586,8 @@ rotate
 </style>
 </head>
 
+<!-- ================================바디 시작================================================================== -->
+
 <body>
 
 	<noscript>
@@ -716,7 +716,7 @@ rotate
 
 
 	<!-- dropify.css가 수정되어 있기 때문에 cdn에 있는 내용과 다름 -->
-	<link href="/resources/vendor/dropify/dropify.min.css" rel="stylesheet">
+	<link href="./resources/willfun/css/dropfy2.css" rel="stylesheet">
 
 
 	<!-- bootstrap-tokenfield.css가 수정되어 있기 때문에 cdn에 있는 내용과 다름 -> 그걸 가지고 min 다시 만듬 -->
@@ -900,6 +900,8 @@ rotate
 				</div>
 			</div>
 		</div>
+
+	
 		<script>
 /*<![CDATA[*/
 	new Vue({
@@ -951,6 +953,10 @@ rotate
 				<div class="col-md-2"></div>
 			</div>
 		</div>
+
+
+<!-- ================================입력창 사이드 ================================================================== -->
+	
 
 		<div id="reward-make">
 			<div id="list_wrap"
@@ -1008,6 +1014,10 @@ rotate
 									</div>
 								</div>
 							</div>
+							
+
+<!-- ================================입력창 메인 입력폼 시작================================================================== -->
+							
 							<div class="col-md-10 col-line">
 								<div class="row not-space">
 									<div class="col-lg-1"></div>
@@ -1225,6 +1235,8 @@ rotate
 									</div>
 								</div>
 							</div>
+<!-- ================================입력창 메인 입력폼 끝================================================================== -->
+							
 							<!---->
 							<!---->
 							<!---->
@@ -1290,6 +1302,10 @@ rotate
 		</div>
 
 		<div class="clearfix"></div>
+<!-- ================================입력창 사이드 끝================================================================== -->
+
+<!-- ================================바디 끝================================================================== -->
+
 
 		<footer class="crwody-footer-wrap">
 		<div class="container">
