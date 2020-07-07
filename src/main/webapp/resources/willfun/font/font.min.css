@@ -1,0 +1,35 @@
+@font-face {
+	font-family: 'Noto Sans KR';
+	font-style: normal;
+	font-weight: 400;
+	src: local('NotoSansCJKkr-Regular'), local('NotoSansKR-Regular'),
+		url(/fonts/NotoSansKR-Regular-Hestia.woff) format('woff'),
+		url(/fonts/NotoSansCJKkr-Regular.otf) format('opentype');
+}
+
+@font-face {
+	font-family: 'Noto Sans KR';
+	font-style: normal;
+	font-weight: 300;
+	src: local('NotoSansCJKkr-Light'), local('NotoSansKR-Light'),
+		url(/fonts/NotoSansKR-Light-Hestia.woff) format('woff'),
+		url(/fonts/NotoSansCJKkr-Light.otf) format('opentype');
+}
+
+@font-face {
+	font-family: 'Noto Sans KR';
+	font-style: normal;
+	font-weight: 500;
+	src: local('NotoSansCJKkr-Medium'), local('NotoSansKR-Medium'),
+		url(/fonts/NotoSansKR-Medium-Hestia.woff) format('woff'),
+		url(/fonts/NotoSansCJKkr-Medium.otf) format('opentype');
+}
+
+@font-face {
+	font-family: 'Noto Sans KR';
+	font-style: normal;
+	font-weight: 700;
+	src: local('NotoSansCJKkr-Bold'), local('NotoSansKR-Bold'),
+		url(/fonts/NotoSansKR-Bold-Hestia.woff) format('woff'),
+		url(/fonts/NotoSansCJKkr-Bold.otf) format('opentype');
+}
