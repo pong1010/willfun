@@ -73,7 +73,8 @@
                                          <a href="/findIdForm">아이디 찾기</a>         
                                          <a href="/findPassword">비밀번호 찾기</a>                     
                                          </td>
-                                        </tr>
+                                </tr>
+                                <a href="${naver_url}"><img height="30" src="http://static.nid.naver.com/oauth/small_g_in.PNG"/></a>
                             </fieldset>
                             <input type="hidden" name="${_csrf.parameterName }" value="${_csrf.token }"/>
                         </form>

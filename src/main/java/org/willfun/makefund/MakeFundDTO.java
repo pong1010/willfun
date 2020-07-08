@@ -1,7 +1,5 @@
 package org.willfun.makefund;
 
-import java.util.Date;
-
 import lombok.Data;
 
 @Data
@@ -13,8 +11,8 @@ public class MakeFundDTO {
 	private String fees;
 	private String title;
 	private int target_money;
-	private Date project_start;
-	private Date project_end;
+	private String project_start;
+	private String project_end;
 	private String main_img_sname;
 	private String main_img_oname;
 	private int hash_no;

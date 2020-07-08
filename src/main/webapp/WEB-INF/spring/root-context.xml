@@ -43,4 +43,6 @@
 
 	<task:annotation-driven/>
 	<aop:aspectj-autoproxy/> 
+	
+	<bean id="naverLoginBO" class="org.willfun.naver.NaverLoginBO" />
 </beans>

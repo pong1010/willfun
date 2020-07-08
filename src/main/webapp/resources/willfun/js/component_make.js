@@ -348,7 +348,7 @@
 										classes: "custom_underline"
 									}
 								},
-								content_css: ["/resources/willfund/css/custom-tinymce.min.css", "/resources/willfun/css/skin.min.css"],
+								content_css: ["/resources/css/custom-tinymce.min.css?20190911v01", "/resources/js/tinymce/skins/white/skin.min.css"],
 								default_link_target: "_blank",
 								link_title: !1,
 								target_list: !1,

@@ -1,7 +1,9 @@
 <%@ page contentType="text/html; charset=UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%	request.setCharacterEncoding("UTF-8");%>
-
+<%
+	request.setCharacterEncoding("UTF-8");
+String cp = request.getContextPath();
+%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -63,18 +65,18 @@
 	rel="stylesheet">
 
 <link rel="stylesheet"
-	href="/resources/willfun/css/common.min.css">
+	href="//image-se.ycrowdy.com/crowdyCss/common.min.css?v=20200416_001">
 <link rel="stylesheet"
-	href="/resources/willfun/css/theme.min.css">
+	href="//image-se.ycrowdy.com/crowdyCss/theme.min.css?v=20200407_001">
 <link rel="stylesheet"
-	href="/resources/willfun/css/custom.min.css">
+	href="//image-se.ycrowdy.com/crowdyCss/custom.min.css?v=20200429_001">
 
 <link rel="stylesheet"
-	href="/resources/willfun/css/crowdy.min.css">
+	href="//image-se.ycrowdy.com/crowdyCss/crowdy/crowdy.min.css?v=20200615_002">
 <link rel="stylesheet"
-	href="/resources/willfun/css/crowdyCardUI.min.css">
+	href="//image-se.ycrowdy.com/crowdyCss/crowdy/crowdyCardUI.min.css?v=20200515_002">
 <link rel="stylesheet"
-	href="/resources/willfun/css/datepickerCustom.css">
+	href="//image-se.ycrowdy.com/crowdyCss/crowdy/datepickerCustom.css">
 
 
 
@@ -586,8 +588,6 @@ rotate
 </style>
 </head>
 
-<!-- ================================바디 시작================================================================== -->
-
 <body>
 
 	<noscript>
@@ -716,21 +716,21 @@ rotate
 
 
 	<!-- dropify.css가 수정되어 있기 때문에 cdn에 있는 내용과 다름 -->
-	<link href="/resources/willfun/css/dropfy2.css" rel="stylesheet">
+	<link href="/resources/vendor/dropify/dropify.min.css" rel="stylesheet">
 
 
 	<!-- bootstrap-tokenfield.css가 수정되어 있기 때문에 cdn에 있는 내용과 다름 -> 그걸 가지고 min 다시 만듬 -->
 	<link
-		href="/resources/willfun/css/bootstrap-tokenfield.min.css"
+		href="/resources/vendor/bootstrap-tokenfield/bootstrap-tokenfield.min.css"
 		rel="stylesheet">
 
 
 	<link rel="stylesheet"
-		href="/resources/willfun/css/custom_shinhan.min.css">
+		href="//image-se.ycrowdy.com/crowdyCss/custom_shinhan.min.css?v=20191202">
 
 
 	<link rel="stylesheet"
-		href="/resources/willfun/css/custom-tinymce.min.css">
+		href="//image-se.ycrowdy.com/crowdyCss/custom-tinymce.min.css">
 
 
 
@@ -740,7 +740,7 @@ rotate
 
 	<script
 		src="//cdnjs.cloudflare.com/ajax/libs/accounting.js/0.4.1/accounting.min.js"></script>
-	<script src="/resources/willfun/js/vue-numeric.min.js"></script>
+	<script src="//image-se.ycrowdy.com/crowdyJs/vue-numeric.min.js"></script>
 
 
 	<script
@@ -750,8 +750,8 @@ rotate
 	<script
 		src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-tokenfield/0.12.0/bootstrap-tokenfield.min.js"></script>
 	<!-- cdn꺼 넣으면 에디터가 안나오니 그냥 resources꺼 사용 -->
-	<script src="/resources/willfun/js/tinymce.min.js"></script>
-	<script src="/resources/willfun/js/ko_KR.js"></script>
+	<script src="/resources/js/tinymce/tinymce.min.js"></script>
+	<script src="/resources/js/tinymce/langs/ko_KR.js"></script>
 
 
 	<script
@@ -762,14 +762,14 @@ rotate
 		src="//static.nid.naver.com/js/naverLogin_implicit-1.0.3.js"></script>
 	<script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
 	<script
-		src="/resources/willfun/css/customer.script.min.js"></script>
+		src="//image-se.ycrowdy.com/crowdyJs/customer.script.min.js?v20191108"></script>
 	<script
 		src="//cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js"></script>
 
 
 
 	<script
-		src="/resources/willfun/js/component_make.js"></script>
+		src="//image-se.ycrowdy.com/crowdyDist/component_make.78556e858fecc05fe27d.js"></script>
 
 
 	<div class="page-wrapper" id="page">
@@ -900,8 +900,6 @@ rotate
 				</div>
 			</div>
 		</div>
-
-	
 		<script>
 /*<![CDATA[*/
 	new Vue({
@@ -953,10 +951,6 @@ rotate
 				<div class="col-md-2"></div>
 			</div>
 		</div>
-
-
-<!-- ================================입력창 사이드 ================================================================== -->
-	
 
 		<div id="reward-make">
 			<div id="list_wrap"
@@ -1014,10 +1008,6 @@ rotate
 									</div>
 								</div>
 							</div>
-							
-
-<!-- ================================입력창 메인 입력폼 시작================================================================== -->
-							
 							<div class="col-md-10 col-line">
 								<div class="row not-space">
 									<div class="col-lg-1"></div>
@@ -1235,8 +1225,6 @@ rotate
 									</div>
 								</div>
 							</div>
-<!-- ================================입력창 메인 입력폼 끝================================================================== -->
-							
 							<!---->
 							<!---->
 							<!---->
@@ -1302,10 +1290,6 @@ rotate
 		</div>
 
 		<div class="clearfix"></div>
-<!-- ================================입력창 사이드 끝================================================================== -->
-
-<!-- ================================바디 끝================================================================== -->
-
 
 		<footer class="crwody-footer-wrap">
 		<div class="container">
