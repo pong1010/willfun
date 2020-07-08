@@ -13,11 +13,6 @@ import lombok.extern.log4j.Log4j;
 @Controller
 @RequestMapping("/article/*")
 public class AticleController {
-	@GetMapping("/accessError")
-	public void accessDenied(Authentication auth, Model model) {
-		log.info("access Denied : "+ auth);
-		model.addAttribute("msg", "Access Denied");
-	}
 	
 	//아티클창
 		@GetMapping("/article")

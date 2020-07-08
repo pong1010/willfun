@@ -1,4 +1,4 @@
-@charset "UTF-8";
+@charset "UTF-8"; 
 
 .webfontBold {
 	font-family: 'Noto Sans KR', sans-serif !important;
@@ -1251,6 +1251,14 @@
 	width: 100%;
 	display: flex;
 	justify-content: space-between
+}
+
+.ivs-info-profile-pong {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align: left;
+	cellpadding: 10px;	
 }
 
 .ivs-info-pjlink {
@@ -4355,7 +4363,7 @@ label.checkbox-inline-1>input[type=checkbox]+span.label::before {
 	font-size: 12px;
 	line-height: 18px;
 	letter-spacing: -.3px;
-	text-align: center
+	text-align: left
 }
 
 .reward-info-profilebox {
@@ -4396,7 +4404,7 @@ label.checkbox-inline-1>input[type=checkbox]+span.label::before {
 }
 
 .reward-share-icon {
-	background-image: url(img/sns_share.svg);
+	background-image: url(/resources/willfun/img/sns_share.png);
 	width: 16px;
 	height: 17px;
 	display: inline-block;
@@ -4444,12 +4452,20 @@ label.checkbox-inline-1>input[type=checkbox]+span.label::before {
 }
 
 .reward-info-statusLine {
-	margin-top: 20px;
-	width: 30%;
+	margin-top: 0px;
+	width: 100%;
 	height: 2px;
 	background-color: #464646
 }
 
+
+.reward-info-statusLine-pong {
+	margin-top: 20px;
+	width: 100%;
+	height: 2px;
+	background-color: #464646
+	valign: middle;
+}
 .reward-info-statusBox {
 	width: 63px
 }
@@ -4484,6 +4500,16 @@ label.checkbox-inline-1>input[type=checkbox]+span.label::before {
 	font-size: 14px;
 	line-height: 18px;
 	letter-spacing: -.3px;
+	color: #002fa3;
+	text-align: center;
+	font-family: 'Noto Sans KR', sans-serif !important;
+	font-weight: 500
+}
+
+.reward-info-pong{
+	font-size: 16px;
+	letter-spacing: -.3px;
+	line-height: 28px;
 	color: #002fa3;
 	text-align: center;
 	font-family: 'Noto Sans KR', sans-serif !important;
