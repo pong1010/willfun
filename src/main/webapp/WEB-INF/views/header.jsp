@@ -1,5 +1,6 @@
 <%@ page contentType="text/html; charset=UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib uri="http://www.springframework.org/security/tags" prefix="sec"%>
 <%
 	request.setCharacterEncoding("UTF-8");
 	String cp = request.getContextPath();
@@ -254,11 +255,29 @@ g(c);c.getInstance=function(a){a=(a&&0!==a.length?a:"$default_instance").toLower
 									</div>
 								</form>
 							</li>
-							<li><a href="javascript:void(0)" class="dropdown-toggle">로그인
+							<sec:authorize access="isAuthenticated()">
+								<li><a href="/member/update" class="dropdown-toggle">정보수정
 							</a></li>
-							<li><a href="/login/join" class="dropdown-toggle">회원가입</a></li>
+								<li>
+									<form id="lg" role="form" method="post" action="/login/customLogout">
+										<fieldset>
+											<li><a id="logout" href="" class="dropdown-toggle">로그아웃
+											</a></li>
+										</fieldset>
+										<input type="hidden" name="${_csrf.parameterName }"
+											value="${_csrf.token }" />
+									</form>
+								</li>
+							</sec:authorize>
+							
+							<sec:authorize access="isAnonymous()">
+							<li><a href="/login/customLogin" class="dropdown-toggle">로그인
+							</a></li>
+							<li><a href="/member/signUp" class="dropdown-toggle">회원가입</a></li>
 							<li><a href="/crowdy/help" target="_blank"
 								class="dropdown-toggle">도움말</a></li>
+							</sec:authorize>
+							
 						</ul>
 					</div>
 					<!---->
@@ -268,6 +287,12 @@ g(c);c.getInstance=function(a){a=(a&&0!==a.length?a:"$default_instance").toLower
 
 			</div>
 		</div>
-
+<script>
+	$("#logout").on("click", function(e) {
+		e.preventDefault();
+		alert("로그아웃");
+		$("#lg").submit();
+	});
+</script>
 <!-- ======================================================================================헤더끝=============================== -->
 		

@@ -13,6 +13,10 @@ INSERT INTO MEMBER_AUTH(EMAIL, AUTH)
 VALUES (#{email}, #{auth})
 </insert>
 
+<delete id="deleteAuthority">
+DELETE FROM MEMBER_AUTH WHERE email = #{email} AND auth = #{role}
+</delete>
+
 <!-- 전체 정보 -->
 <select id="information" parameterType="String" resultType="org.willfun.domain.MemberDTO">
 select * from MEMBER where mem_id = #{mem_id}
@@ -51,31 +55,29 @@ update MEMBER set mem_pwd = #{mem_pwd} where mem_id = #{mem_id}
 </update>
 
 <resultMap type="org.willfun.domain.MemberDTO" id="userMap">
-<id property="mem_id" column="mem_id"/>
-<result property="mem_id" column="mem_id"/>
+<id property="email" column="email"/>
 <result property="mem_pwd" column="mem_pwd"/>
 <result property="mem_name" column="mem_name"/>
-<result property="mem_email" column="mem_email"/>
-<result property="mem_phone" column="mem_phone"/>
+<result property="tel" column="tel"/>
 <collection property="authList" resultMap="authMap">
 </collection>
 </resultMap>
 
 <resultMap type="org.willfun.domain.AuthDTO" id="authMap">
-<result property="mem_id" column="mem_id"/>
+<result property="email" column="email"/>
 <result property="auth" column="auth"/>
 </resultMap>
 
 <select id="read" resultMap="userMap">
-SELECT member.mem_id, mem_pwd, mem_name, mem_phone, mem_email, mem_stat, enabled, auth
-FROM MEMBER member LEFT OUTER JOIN MEMBER_auth auth on member.mem_id = auth.mem_id
-WHERE member.mem_id = #{mem_id} AND mem_stat = 'R'
+SELECT member.email, mem_pwd, mem_name, tel, regdate, enabled, auth
+FROM MEMBER member LEFT OUTER JOIN MEMBER_AUTH auth on member.email = auth.email
+WHERE member.email = #{email}
 </select>
 
 <select id="selectAuth" resultType="org.willfun.domain.AuthDTO">
-SELECT mem_id, auth 
+SELECT email, auth 
 FROM MEMBER_AUTH
-WHERE mem_id = #{mem_id}
+WHERE email = #{email}
 </select>
 
 <resultMap id="getUserById" type="org.willfun.domain.MemberDTO">
@@ -94,10 +96,6 @@ SELECT * FROM MEMBER WHERE mem_id = #{mem_id}
 <select id="selectUser" resultMap="getUserById">
 SELECT mem_id FROM MEMBER
 </select>
-
-<delete id="deleteAuthority">
-DELETE FROM MEMBER_AUTH WHERE mem_id = #{mem_id} AND auth = #{role}
-</delete>
 
 <select id="findAdmin" resultType="org.willfun.domain.MemberDTO">
 SELECT * FROM MEMBER where mem_stat = #{mem_stat}
