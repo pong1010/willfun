@@ -60,6 +60,30 @@ public class CommonController {
 		  
 		  return "mkproject/CrowdyFundingMain"; }
 	
+	//프로젝트 입력페이지
+	@GetMapping("/writeproject1")
+	 String CrowdyFundingWirte1() {
+		
+		return "mkproject/reward/rewardFunding1";
+	}
+	
+	@GetMapping("/writeproject2")
+	 String CrowdyFundingWirte2() {
+		
+		return "mkproject/reward/rewardFunding2";
+	}
+		
+	@GetMapping("/writeproject3")
+	 String CrowdyFundingWirte3() {
+		
+		return "mkproject/reward/rewardFunding3";
+	}
+	
+	@GetMapping("/writeproject4")
+	 String CrowdyFundingWirte4() {
+		
+		return "mkproject/reward/rewardFunding4";
+	}
 	
 	//회원가입창
 	@GetMapping("/join")
