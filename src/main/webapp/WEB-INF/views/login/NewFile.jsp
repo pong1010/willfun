@@ -134,6 +134,26 @@
 	src="//image-se.ycrowdy.com/crowdyDist/component_crowdy.657a8e8339ed81b39752.js"></script>
 
 
+<script>
+		var user = localStorage.getItem('user');
+		
+		if(user != null) {
+			var uid = JSON.parse(user).memCode;
+			window.dataLayer = window.dataLayer || [];
+			window.dataLayer.push({'uid': uid, 'CD1': uid, 'event' : ''});
+		}
+	</script>
+
+<!-- kakao pixel -->
+<script charset="UTF-8" src="//t1.daumcdn.net/adfit/static/kp.js"
+	type="text/javascript"></script>
+<script type="text/javascript">
+	      kakaoPixel('1467026451353914035').pageView();
+	      var path = document.location.pathname;
+	      if(path.indexOf('/i/') > -1 || path.indexOf('/invest/list') > -1) {
+	    	  kakaoPixel('1467026451353914035').pageView('investVisit');	  
+	      }
+	</script>
 
 <!-- Google Optimize -->
 <!-- Page hiding snippet (recommended) -->
@@ -142,6 +162,20 @@
 	opacity: 0 !important
 }
 </style>
+<script>
+    (function(a,s,y,n,c,h,i,d,e){s.className+=' '+y;
+    h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
+    (a[n]=a[n]||[]).hide=h;setTimeout(function(){i();h.end=null},c);
+    })(window,document.documentElement,'async-hide','dataLayer',4000,{'GTM-KDPXZ7W':true});
+    </script>
+<!-- End Google Optimize -->
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-KDPXZ7W');</script>
 <!-- End Google Tag Manager -->
 
 <script
@@ -725,6 +759,7 @@ rotate(
 				</div>
 			</div>
 
+		</div>
 
 		<div id="login">
 			<div class="crowdy-login-layout">
@@ -739,37 +774,34 @@ rotate(
 						class="crowdy-color-blue crowdy-font-bold">1분 만에 회원가입하기 <i
 						aria-hidden="true" class="fa fa-angle-right"></i></a>
 				</div>
-				 <form role="form" method="post" action="/login">
-				 <input type="hidden" name="${_csrf.parameterName }" value="${_csrf.token }"/>
 				<div class="crowdy-focus-change">
 					<label for="memEmail" class="crowdy-label-01 hidden-xs">이메일(ID)</label>
 					<div for="memEmail" class="hidden-sm hidden-md hidden-lg"></div>
-					<input type="text" id="memEmail" name="username"
+					<input type="text" id="memEmail" name="memEmail"
 						autofocus="autofocus" placeholder="ID를 입력해주세요"
 						class="crowdy-input-01 mb15 xs-mb15">
 				</div>
 				<div class="crowdy-focus-change">
 					<label for="memPwd" class="crowdy-label-01 hidden-xs">비밀번호</label>
 					<div for="memPwd" class="hidden-sm hidden-md hidden-lg"></div>
-					<input type="password" id="memPwd" name="password"
+					<input type="password" id="memPwd" name="memPwd"
 						placeholder="비밀번호를 입력해주세요" class="crowdy-input-01 mb15 xs-mb20">
 				</div>
 				<div class="crowdy-login-save">
-					<label class="crowdy-check-container crowdy-label-02">자동 로그인
-					 <input type="checkbox" name="remember-me"> <span
+					<label class="crowdy-check-container crowdy-label-02">아이디
+						저장하기 <input type="checkbox"> <span
 						class="crowdy-check-mark"></span>
 					</label> <a href="/user/find-id-password" class="crowdy-label-02"
 						style="text-align: right;">아이디 비밀번호 찾기 <i aria-hidden="true"
 						class="fa fa-angle-right"></i></a>
 				</div>
-				<button type="submit" class="crowdy-btn-02 mt30">로그인</button>
+				<div class="crowdy-btn-02 mt30">로그인</div>
 				<label class="labelError-01 xs-mt10" style="display: none;"></label>
 				<div class="mt30 xs-mt10">
 					<hr class="crowdy-login-hr">
 					<span class="crowdy-login-txtWidth">또는</span>
 					<hr class="crowdy-login-hr">
 				</div>
-				</form>
 				<div class="crowdy-btn-03 mt25 xs-mt10">
 					<div class="crowdy-btn-centerLayout">
 						<div class="crowdy-facebook-icon" style="margin-right: 15px;"></div>
@@ -792,95 +824,6 @@ rotate(
 			</div>
 		</div>
 
-	</div>
-
-
-	<<div class="clearfix"></div>
-		<!-- Channel Plugin Scripts -->
-		<script>
-  (function() {
-    var w = window;
-    if (w.ChannelIO) {
-      return (window.console.error || window.console.log || function(){})('ChannelIO script included twice.');
-    }
-    var d = window.document;
-    var ch = function() {
-      ch.c(arguments);
-    };
-    ch.q = [];
-    ch.c = function(args) {
-      ch.q.push(args);
-    };
-    w.ChannelIO = ch;
-    function l() {
-      if (w.ChannelIOInitialized) {
-        return;
-      }
-      w.ChannelIOInitialized = true;
-      var s = document.createElement('script');
-      s.type = 'text/javascript';
-      s.async = true;
-      s.src = 'https://cdn.channel.io/plugin/ch-plugin-web.js';
-      s.charset = 'UTF-8';
-      var x = document.getElementsByTagName('script')[0];
-      x.parentNode.insertBefore(s, x);
-    }
-    if (document.readyState === 'complete') {
-      l();
-    } else if (window.attachEvent) {
-      window.attachEvent('onload', l);
-    } else {
-      window.addEventListener('DOMContentLoaded', l, false);
-      window.addEventListener('load', l, false);
-    }
-  })();
-  ChannelIO('boot', {
-    "pluginKey": "14395221-358d-4eaf-aa74-7af315752ed0"
-  });
-</script>
-		<!-- End Channel Plugin -->
-
-		<!-- <script>
-  ;window.channelPluginSettings = {
-    "pluginKey": "14395221-358d-4eaf-aa74-7af315752ed0"
-  };
-  (function() {
-    var w = window;
-    if (w.ChannelIO) {
-      return (window.console.error || window.console.log || function(){})('ChannelIO script included twice.');
-    }
-    var d = window.document;
-    var ch = function() {
-      ch.c(arguments);
-    };
-    ch.q = [];
-    ch.c = function(args) {
-      ch.q.push(args);
-    };
-    w.ChannelIO = ch;
-    function l() {
-      if (w.ChannelIOInitialized) {
-        return;
-      }
-      w.ChannelIOInitialized = true;
-      var s = document.createElement('script');
-      s.type = 'text/javascript';
-      s.async = true;
-      s.src = 'https://cdn.channel.io/plugin/ch-plugin-web.js';
-      s.charset = 'UTF-8';
-      var x = document.getElementsByTagName('script')[0];
-      x.parentNode.insertBefore(s, x);
-    }
-    if (document.readyState === 'complete') {
-      l();
-    } else if (window.attachEvent) {
-      window.attachEvent('onload', l);
-    } else {
-      window.addEventListener('DOMContentLoaded', l, false);
-      window.addEventListener('load', l, false);
-    }
-  })();
-</script> -->
 	</div>
 
 
@@ -933,13 +876,6 @@ rotate(
 
 
 
-	<script type="text/javascript" id="">function fbqSearchKeyword(){var a=document.referrer;if(a){var b=document.createElement("a");b.setAttribute("href",a);a=/[\?&](?:q|query)=([^&#]*)/;if((a=b.search.match(a))&&0<a.length)var c=a[1].replace(/\+/gi,"%20");c&&fbq("trackCustom","SearchKeyword",{hostname:b.hostname,keyword:decodeURIComponent(c)})}}fbqSearchKeyword();</script>
-
-	<script type="text/javascript" id="">fbq("track","PageView_Login");</script>
-	<script type="text/javascript" id="">(function(e,a){function f(b,a){b.prototype[a]=function(){this._q.push([a].concat(Array.prototype.slice.call(arguments,0)));return this}}function g(b){function a(a){b[a]=function(){b._q.push([a].concat(Array.prototype.slice.call(arguments,0)))}}for(var c=0;c<h.length;c++)a(h[c])}var c=e.amplitude||{_q:[],_iq:{}},b=a.createElement("script");b.type="text/javascript";b.integrity="sha384-vYYnQ3LPdp/RkQjoKBTGSq0X5F73gXU3G2QopHaIfna0Ct1JRWzwrmEz115NzOta";b.crossOrigin="anonymous";b.async=!0;b.src="https://cdn.amplitude.com/libs/amplitude-5.8.0-min.gz.js";
-b.onload=function(){e.amplitude.runQueuedFunctions||console.log("[Amplitude] Error: could not load SDK")};a=a.getElementsByTagName("script")[0];a.parentNode.insertBefore(b,a);b=function(){this._q=[];return this};a="add append clearAll prepend set setOnce unset".split(" ");for(var d=0;d<a.length;d++)f(b,a[d]);c.Identify=b;b=function(){this._q=[];return this};a=["setProductId","setQuantity","setPrice","setRevenueType","setEventProperties"];for(d=0;d<a.length;d++)f(b,a[d]);c.Revenue=b;var h="init logEvent logRevenue setUserId setUserProperties setOptOut setVersionName setDomain setDeviceId enableTracking setGlobalUserProperties identify clearUserProperties setGroup logRevenueV2 regenerateDeviceId groupIdentify onInit logEventWithTimestamp logEventWithGroups setSessionId resetSessionId".split(" ");
-g(c);c.getInstance=function(a){a=(a&&0!==a.length?a:"$default_instance").toLowerCase();c._iq.hasOwnProperty(a)||(c._iq[a]={_q:[]},g(c._iq[a]));return c._iq[a]};e.amplitude=c})(window,document);amplitude.getInstance().init("88ee3f94796e2cd53036c329ca2a87ec",null,{includeGclid:!0,includeUtm:!0,includeReferrer:!0});</script>
-	<style data-styled="" data-styled-version="4.4.1"></style>
 	<div id="fb-root" class=" fb_reset">
 		<div
 			style="position: absolute; top: -10000px; width: 0px; height: 0px;">

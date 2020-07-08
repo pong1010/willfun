@@ -1,10 +1,11 @@
 <%@ page contentType="text/html; charset=UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib uri="http://www.springframework.org/security/tags" prefix="sec"%>
 <%
 	request.setCharacterEncoding("UTF-8");
 	String cp = request.getContextPath();
 %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 5 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -18,6 +19,8 @@
 <!-- css & js -->    
 	<link rel="stylesheet" href="/resources/willfun/font/font.min.css">
 	<link rel="stylesheet" type="text/css" href="/resources/willfun/css/all.min.css">
+	
+	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="/resources/willfun/bootstrap/bootstrap.min.css">
 
 	<link rel="stylesheet" type="text/css" href="/resources/willfun/css/common.min.css">
@@ -40,12 +43,17 @@
 
     
     
-	<script type="text/javascript" async="" src="https://cdn.channel.io/plugin/ch-plugin-web.js" charset="UTF-8"></script><script type="text/javascript" async="" src="https://www.google-analytics.com/plugins/ua/ec.js"></script><script type="text/javascript" async="" src="https://www.gstatic.com/recaptcha/releases/NMoy4HgGiLr5NAQaEQa2ho8X/recaptcha__ko.js"></script><script type="text/javascript" integrity="sha384-vYYnQ3LPdp/RkQjoKBTGSq0X5F73gXU3G2QopHaIfna0Ct1JRWzwrmEz115NzOta" crossorigin="anonymous" async="" src="https://cdn.amplitude.com/libs/amplitude-5.8.0-min.gz.js"></script><script src="https://connect.facebook.net/signals/config/112654742726251?v=2.9.21&amp;r=stable" async=""></script><script async="" src="https://connect.facebook.net/en_US/fbevents.js"></script><script type="text/javascript" async="" src="//www.googleadservices.com/pagead/conversion_async.js"></script><script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-KDPXZ7W"></script><script src="//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" async="" src="https://cdn.channel.io/plugin/ch-plugin-web.js" charset="UTF-8"></script>
+<script type="text/javascript" async="" src="https://www.google-analytics.com/plugins/ua/ec.js"></script>
+<script type="text/javascript" async="" src="https://www.gstatic.com/recaptcha/releases/NMoy4HgGiLr5NAQaEQa2ho8X/recaptcha__ko.js"></script>
+<script type="text/javascript" integrity="sha384-vYYnQ3LPdp/RkQjoKBTGSq0X5F73gXU3G2QopHaIfna0Ct1JRWzwrmEz115NzOta" crossorigin="anonymous" async="" src="https://cdn.amplitude.com/libs/amplitude-5.8.0-min.gz.js"></script>
+<script src="https://connect.facebook.net/signals/config/112654742726251?v=2.9.21&amp;r=stable" async=""></script><script async="" src="https://connect.facebook.net/en_US/fbevents.js"></script><script type="text/javascript" async="" src="//www.googleadservices.com/pagead/conversion_async.js"></script><script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-KDPXZ7W"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
     
 	<script src="//cdnjs.cloudflare.com/ajax/libs/vue/2.5.2/vue.min.js"></script>
 	
-	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 	
 	<script src="//cdnjs.cloudflare.com/ajax/libs/axios/0.17.1/axios.min.js"></script>
@@ -63,10 +71,9 @@
 		<script th:src="|${jsPath}/media.match.min.js|"></script>
 		<script th:src="|${jsPath}/respond.min.js|"></script>
 	<![endif]-->
+    
+    
 
-    
-    
-	<script src="/resources/willfun/js/component_make.js"></script>
 
     
     <script>
@@ -248,11 +255,29 @@ g(c);c.getInstance=function(a){a=(a&&0!==a.length?a:"$default_instance").toLower
 									</div>
 								</form>
 							</li>
-							<li><a href="javascript:void(0)" class="dropdown-toggle">로그인
+							<sec:authorize access="isAuthenticated()">
+								<li><a href="/member/update" class="dropdown-toggle">정보수정
 							</a></li>
-							<li><a href="/login/join" class="dropdown-toggle">회원가입</a></li>
+								<li>
+									<form id="lg" role="form" method="post" action="/login/customLogout">
+										<fieldset>
+											<li><a id="logout" href="" class="dropdown-toggle">로그아웃
+											</a></li>
+										</fieldset>
+										<input type="hidden" name="${_csrf.parameterName }"
+											value="${_csrf.token }" />
+									</form>
+								</li>
+							</sec:authorize>
+							
+							<sec:authorize access="isAnonymous()">
+							<li><a href="/login/customLogin" class="dropdown-toggle">로그인
+							</a></li>
+							<li><a href="/member/signUp" class="dropdown-toggle">회원가입</a></li>
 							<li><a href="/crowdy/help" target="_blank"
 								class="dropdown-toggle">도움말</a></li>
+							</sec:authorize>
+							
 						</ul>
 					</div>
 					<!---->
@@ -262,6 +287,12 @@ g(c);c.getInstance=function(a){a=(a&&0!==a.length?a:"$default_instance").toLower
 
 			</div>
 		</div>
-
+<script>
+	$("#logout").on("click", function(e) {
+		e.preventDefault();
+		alert("로그아웃");
+		$("#lg").submit();
+	});
+</script>
 <!-- ======================================================================================헤더끝=============================== -->
 		

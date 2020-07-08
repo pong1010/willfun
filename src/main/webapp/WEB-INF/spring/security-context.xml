@@ -16,10 +16,9 @@
 
 <bean id="loginSuccessHandler" class="org.willfun.security.LoginSuccessHandler">
     <property name="loginidname" value="username"/>
-    <property name="defaultUrl" value="/"/> 
+    <property name="defaultUrl" value="/main"/> 
 </bean>
 
-	<security:http pattern="/android/**" security="none"></security:http>
 <security:http>
 	
 	<!-- URI 접근시 인터셉터를 이용해 접근을 제한 pattern은 URI 패턴, access는 권한 -->
@@ -30,10 +29,10 @@
 	authentication-success-handler-ref="loginSuccessHandler" />
 	
 
-	<security:logout logout-url="/login/customLogout" logout-success-url="/mainPage" invalidate-session="true"/>
+	<security:logout logout-url="/login/customLogout" logout-success-url="/main" invalidate-session="true"/>
 	
 	<security:remember-me data-source-ref="dataSource" token-validity-seconds="366600"/>
-	<security:logout logout-url="/login/customLogout" logout-success-url="/mainPage" invalidate-session="true" delete-cookies="remember-me, JSESSION_ID"/>
+	<security:logout logout-url="/login/customLogout" logout-success-url="/main" invalidate-session="true" delete-cookies="remember-me, JSESSION_ID"/>
 </security:http>
 
 <security:authentication-manager>
