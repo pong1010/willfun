@@ -92,7 +92,8 @@ public class CommonController {
 		
 		return "join/SignUp";
 	}
-		
+	
+
 	
 	
 }
