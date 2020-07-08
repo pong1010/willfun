@@ -459,7 +459,34 @@
 				
 				
 				
-				
+<script type="text/javascript" language="javascript">
+
+$(document).ready(function(){
+	
+	$.ajax({
+		type : "GET",
+		url :"atriclenwes.jsp",
+		dataType : "html",
+		error : funciton() {
+			alert("통신실패!!");
+		},
+		success : funciton(Parse_data) {
+			${"Parse_Area").html(Parse_data);
+		}
+		}
+		
+		
+		
+	});
+	
+	
+	
+	
+});
+
+
+
+</script>				
 				
 				
 				
