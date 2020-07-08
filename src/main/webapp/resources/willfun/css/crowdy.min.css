@@ -1,7 +1,8 @@
+@charset "UTF-8"; 
 html[lang|=ko] .button, html[lang|=ko] body, html[lang|=ko] input, html[lang|=ko] select,
 	html[lang|=ko] textarea {
-	font-family: "Noto Sans KR", 'Malgun Gothic', '筌띾쵐占� �⑥쥓逾�',
-		'Nanum Gothic', '占쎌꼶�땸 �⑥쥓逾�', '占쎈뿭占�', dotum, sans-serif !important
+	font-family: "Noto Sans KR", 'Malgun Gothic', '맑은 고딕',
+		'Nanum Gothic', '나눔 고딕', '돋움', dotum, sans-serif !important
 }
 
 html {
@@ -1365,7 +1366,10 @@ rgba(
 	font-weight: 700
 }
 
+
 .crowdy-footer-dangerDesc {
+	font-family: 'Noto Sans KR';
+	font-weight: 700;
 	font-size: 13px;
 	letter-spacing: -.3px;
 	color: #464646;
@@ -1413,16 +1417,22 @@ rgba(
 }
 
 .crowdy-footer-title {
+	font-family: 'Noto Sans KR','Malgun Gothic';
+	font-weight: 700;
 	color: #464646;
-	font-size: 14px;
+	font-size: 16px;
 	font-weight: 700;
 	margin-bottom: 15px
 }
 
 .crowdy-footer-ul {
+	font-family: 'Noto Sans KR';
+	font-weight: 700;
 	padding: 0;
 	line-height: 27px;
-	margin-bottom: 10px
+	margin-bottom: 10px;
+	font-size: 14px;
+	width: 500px;
 }
 
 .crowdy-footer-bottom {
@@ -3033,8 +3043,8 @@ rgba(
 
 #paymentInfo .funding-page-area-input.card.hide-card:-ms-input-placeholder
 	{
-	font-family: "Noto Sans KR", 'Malgun Gothic', '筌띾쵐占� �⑥쥓逾�',
-		'Nanum Gothic', '占쎌꼶�땸 �⑥쥓逾�', '占쎈뿭占�', dotum, sans-serif !important;
+	font-family: "Noto Sans KR", 'Malgun Gothic', '嶺뚮씭理먨뜝占� 占썩뫁伊볣�억옙',
+		'Nanum Gothic', '�뜝�럩瑗띰옙�빖 占썩뫁伊볣�억옙', '�뜝�럥肉��뜝占�', dotum, sans-serif !important;
 	font-size: 14px !important
 }
 

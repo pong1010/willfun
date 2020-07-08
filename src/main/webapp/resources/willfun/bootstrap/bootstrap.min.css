@@ -736,7 +736,7 @@ td, th {
 }
 
 .glyphicon-chevron-up:before {
-	content: "\e113"
+	content: "▲"
 }
 
 .glyphicon-chevron-down:before {
